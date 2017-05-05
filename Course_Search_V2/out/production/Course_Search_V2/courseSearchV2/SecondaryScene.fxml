@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.collections.*?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane prefHeight="600.0" prefWidth="1000.0" stylesheets="@MainStyle.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="courseSearchV2.Controller2">
+            <top>
+                <VBox prefHeight="60.0">
+                    <children>
+                        <MenuBar style="-fx-background-color: #252525;" styleClass="default-button" BorderPane.alignment="CENTER">
+                            <menus>
+                                <Menu mnemonicParsing="false" style="-fx-text-fill: white;" text="File">
+                                    <items>
+                                        <MenuItem mnemonicParsing="false" onAction="#closeFunction" text="Close" />
+                                    </items>
+                                </Menu>
+                                <Menu mnemonicParsing="false" text="Edit">
+                                    <items>
+                                        <MenuItem mnemonicParsing="false" onAction="#restart" text="Restart" />
+                                    </items>
+                                </Menu>
+                                <Menu mnemonicParsing="false" text="Help">
+                                    <items>
+                                        <MenuItem mnemonicParsing="false" onAction="#about" text="About" />
+                                    </items>
+                                </Menu>
+                            </menus>
+                        </MenuBar>
+                        <HBox alignment="CENTER_LEFT" minHeight="-Infinity" prefHeight="60.0" spacing="10.0" style="-fx-background-color: #252525;">
+                            <children>
+                                <TextField fx:id="search2_textfield" alignment="BOTTOM_CENTER" prefWidth="300.0">
+                                    <font>
+                                        <Font size="12.0" />
+                                    </font>
+                                </TextField>
+                                <Button defaultButton="true" mnemonicParsing="false" onAction="#search2_buttAction" style="-fx-background-color: #420300;" text="Search">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </Button>
+                            </children>
+                     <padding>
+                        <Insets left="20.0" />
+                     </padding>
+                        </HBox>
+                    </children>
+                </VBox>
+            </top>
+            <center>
+
+            </center>
+         <left>
+            <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="225.0" spacing="10.0" style="-fx-background-color: #5c0302;" BorderPane.alignment="CENTER">
+               <children>
+                  <Label alignment="CENTER" style="-fx-text-fill: white;" text="Filter" />
+                  <TextField fx:id="crn_textfield" alignment="CENTER" maxHeight="25.0" maxWidth="75.0" prefHeight="25.0" prefWidth="75.0" promptText="CRN" VBox.vgrow="NEVER" />
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label text="Course Level: " textFill="WHITE" />
+                  <ComboBox fx:id="level_combo" prefWidth="150.0">
+                      <items>
+                      <FXCollections fx:factory="observableArrayList">
+                          <String fx:value="400" />
+                          <String fx:value="300" />
+                          <String fx:value="200" />
+                          <String fx:value="100" />
+                      </FXCollections>
+                      </items>
+                  </ComboBox>
+               </children>
+            </HBox>
+                  <ComboBox fx:id="subject_combo" onAction="#subject_comboAction" prefWidth="150.0" promptText="Subject" />
+                  <ComboBox fx:id="course_combo" onAction="#course_comboAction" prefWidth="150.0" promptText="Course" />
+                  <ComboBox fx:id="section_combo" onAction="#section_comboAction" prefWidth="150.0" promptText="Section" />
+            <Label text="Start Time" textFill="WHITE">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+                  <HBox alignment="CENTER" maxHeight="30.0" prefHeight="30.0" prefWidth="200.0" spacing="10.0">
+                     <children>
+                        <TextField fx:id="hours1_textfield" maxWidth="40.0" prefWidth="40.0" promptText="HH" />
+                        <Label style="-fx-text-fill: white;" text=":" />
+                        <TextField fx:id="min1_textfield" maxWidth="40.0" prefWidth="40.0" promptText="MM">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                        </TextField>
+                        <ComboBox maxWidth="60.0" prefHeight="25.0" prefWidth="60.0">
+                            <items>
+                                <FXCollections fx:factory="observableArrayList">
+                                    <String fx:value="AM" />
+                                    <String fx:value="PM" />
+                                </FXCollections>
+                            </items>
+                            <value>
+                                <String fx:value="AM" />
+                            </value>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                        </ComboBox>
+                     </children>
+                  </HBox>
+            <Label text="End Time" textFill="WHITE">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+                  <HBox alignment="CENTER" maxHeight="30.0" prefHeight="30.0" prefWidth="200.0" spacing="10.0">
+                     <children>
+                        <TextField fx:id="hours2_textfield" maxWidth="40.0" prefWidth="40.0" promptText="HH">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                        </TextField>
+                        <Label style="-fx-text-fill: white;" text=":" />
+                        <TextField fx:id="min2_textfield" maxWidth="40.0" prefWidth="40.0" promptText="MM">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                        </TextField>
+                         <ComboBox maxWidth="60.0" prefHeight="25.0" prefWidth="60.0">
+                             <items>
+                                 <FXCollections fx:factory="observableArrayList">
+                                     <String fx:value="AM" />
+                                     <String fx:value="PM" />
+                                 </FXCollections>
+                             </items>
+                             <value>
+                                 <String fx:value="AM" />
+                             </value>
+                             <opaqueInsets>
+                                 <Insets />
+                             </opaqueInsets>
+                         </ComboBox>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" maxHeight="30.0" prefHeight="30.0" prefWidth="200.0" spacing="10.0">
+                     <children>
+                  <Label text="Class time" textFill="WHITE" />
+                         <ComboBox fx:id="operations_choicebox" maxWidth="60.0" prefHeight="25.0" prefWidth="60.0">
+                             <items>
+                                 <FXCollections fx:factory="observableArrayList">
+                                     <String fx:value="=" />
+                                     <String fx:value="&gt;" />
+                                     <String fx:value="&lt;" />
+                                 </FXCollections>
+                             </items>
+                             <value>
+                                 <String fx:value="=" />
+                             </value>
+                             <opaqueInsets>
+                                 <Insets />
+                             </opaqueInsets>
+                         </ComboBox>
+                        <TextField fx:id="min3_textfield" maxWidth="50.0" prefWidth="40.0" promptText="MM" />
+                     </children>
+                  </HBox>
+            <HBox alignment="CENTER" layoutX="10.0" layoutY="306.0" maxHeight="30.0" prefHeight="30.0" prefWidth="200.0" spacing="10.0">
+               <children>
+                  <Label text="Room empty" textFill="WHITE" />
+                  <ComboBox fx:id="emptyOp_choicebox" maxWidth="60.0" prefHeight="25.0" prefWidth="60.0" value="=">
+                     <items>
+                        <FXCollections fx:factory="observableArrayList">
+                           <String fx:value="=" />
+                           <String fx:value="&gt;" />
+                           <String fx:value="&lt;" />
+                        </FXCollections>
+                     </items>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </ComboBox>
+                  <TextField fx:id="minEmpty_textfield" maxWidth="50.0" prefWidth="40.0" promptText="MM" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" maxHeight="100.0" prefHeight="39.0" prefWidth="225.0" VBox.vgrow="NEVER">
+               <children>
+                  <VBox alignment="CENTER" maxHeight="100.0" prefHeight="100.0" prefWidth="100.0">
+                     <children>
+                        <Label text="M" textFill="WHITE" />
+                        <CheckBox fx:id="monday_cbox" mnemonicParsing="false" textFill="WHITE" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="100.0" prefHeight="100.0" prefWidth="100.0">
+                     <children>
+                        <Label text="T" textFill="WHITE" />
+                        <CheckBox fx:id="tuesday_cbox" mnemonicParsing="false" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" layoutX="110.0" layoutY="10.0" maxHeight="100.0" prefHeight="100.0" prefWidth="100.0">
+                     <children>
+                        <Label text="W" textFill="WHITE" />
+                        <CheckBox fx:id="wednesday_cbox" mnemonicParsing="false" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" layoutX="160.0" layoutY="10.0" maxHeight="100.0" prefHeight="100.0" prefWidth="100.0">
+                     <children>
+                        <Label text="R" textFill="WHITE" />
+                        <CheckBox fx:id="thursday_cbox" mnemonicParsing="false" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" layoutX="178.0" layoutY="10.0" maxHeight="100.0" prefHeight="100.0" prefWidth="100.0">
+                     <children>
+                        <Label text="F" textFill="WHITE" />
+                        <CheckBox fx:id="friday_cbox" mnemonicParsing="false" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+                  <Button fx:id="update_butt" mnemonicParsing="false" onAction="#update_ButtAction" text="Update" />
+                  <Button fx:id="restart_butt" mnemonicParsing="false" onAction="#restart" text="Restart" />
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets top="15.0" />
+               </padding>
+            </VBox>
+         </left>
+   <center>
+      <GridPane BorderPane.alignment="CENTER">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="80.0" minWidth="10.0" prefWidth="80.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="605.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="80.0" minWidth="0.0" prefWidth="80.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="164.0" minHeight="10.0" prefHeight="49.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="393.0" minHeight="10.0" prefHeight="309.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="197.0" minHeight="10.0" prefHeight="133.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="197.0" minHeight="10.0" prefHeight="18.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <TableView fx:id="results_table" prefHeight="319.0" prefWidth="614.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <children>
+                  <Label text="Transaction Log: ">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Label>
+                  <TextArea fx:id="transLog_textarea" editable="false" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;">
+                     <font>
+                        <Font size="10.0" />
+                     </font></TextArea>
+               </children>
+               <padding>
+                  <Insets top="10.0" />
+               </padding>
+            </VBox>
+         </children>
+      </GridPane>
+   </center>
+        </BorderPane>

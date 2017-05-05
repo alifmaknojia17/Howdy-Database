@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.collections.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="courseSearchV2.Controller">
+    <columnConstraints>
+        <ColumnConstraints />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints />
+    </rowConstraints>
+    <children>
+        <BorderPane fx:id="main_borderpane" prefHeight="600.0" prefWidth="1000.0" stylesheets="@MainStyle.css">
+            <top>
+                <VBox>
+                    <children>
+                        <MenuBar style="-fx-background-color: #252525; -fx-color-label-visible: #DBD4C6;" styleClass="default-button" BorderPane.alignment="CENTER">
+                            <menus>
+                                <Menu mnemonicParsing="false" style="-fx-text-fill: white; -fx-color-label-visible: white;" text="File">
+                                    <items>
+                                        <MenuItem mnemonicParsing="false" onAction="#closeFunction" text="Close" />
+                                    </items>
+                                </Menu>
+                                <Menu mnemonicParsing="false" text="Edit">
+                                    <items>
+                                        <MenuItem mnemonicParsing="false" text="Restart" />
+                                    </items>
+                                </Menu>
+                                <Menu mnemonicParsing="false" text="Help">
+                                    <items>
+                                        <MenuItem mnemonicParsing="false" onAction="#about" text="About" />
+                                    </items>
+                                </Menu>
+                            </menus>
+                        </MenuBar>
+                        <VBox>
+                            <children>
+                                <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #5c0302;">
+                                    <children>
+                                        <Label text="TAMU Course Search" textFill="WHITE">
+                                            <font>
+                                                <Font name="System Bold" size="48.0" />
+                                            </font>
+                                            <padding>
+                                                <Insets top="25.0" />
+                                            </padding>
+                                        </Label>
+                                        <Label text="Search courses below!" textFill="WHITE" />
+                                        <Label text="If you want to search a specific Course number or Section number," textFill="WHITE" />
+                                        <Label text="it is more accurate to use the choice boxes below!" textFill="WHITE" />
+                                    </children>
+                                </VBox>
+                                <HBox alignment="BOTTOM_CENTER" prefHeight="50.0" spacing="10.0" style="-fx-background-color: #5c0302;">
+                                    <children>
+                                        <TextField fx:id="search1_textfield" alignment="BOTTOM_CENTER" prefWidth="500.0">
+                                            <font>
+                                                <Font size="12.0" />
+                                            </font>
+                                        </TextField>
+                                        <Button fx:id="search1_butt" defaultButton="true" mnemonicParsing="false" onAction="#search1_buttAction" text="Search">
+                                            <font>
+                                                <Font size="14.0" />
+                                            </font>
+                                        </Button>
+                                    </children>
+                                    <padding>
+                                        <Insets bottom="30.0" />
+                                    </padding>
+                                </HBox>
+                            </children>
+                        </VBox>
+                    </children>
+                </VBox>
+            </top>
+            <center>
+                <GridPane style="-fx-background-color: #DBD4C6;" BorderPane.alignment="CENTER">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="245.0" minWidth="10.0" prefWidth="245.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="181.0" minWidth="10.0" prefWidth="132.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="245.0" minWidth="10.0" prefWidth="245.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="195.0" minWidth="10.0" prefWidth="153.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="208.0" minHeight="10.0" prefHeight="171.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="101.0" minHeight="4.0" prefHeight="41.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                    <children>
+                        <ComboBox fx:id="intro1_combo" onAction="#intro1_setTable" prefWidth="150.0" promptText="Choose" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                            <items>
+                                <FXCollections fx:factory="observableArrayList">
+                                    <String fx:value="Instructor" />
+                                    <String fx:value="Subject" />
+                                    <String fx:value="Course Number" /> <!--Crse-->
+                                    <String fx:value="Course Name" />
+                                    <String fx:value="Building" /> <!--Crse-->
+                                    <String fx:value="Room Number" />
+                                    <String fx:value="Capacity =" />
+                                    <String fx:value="Seats Remaining =" />
+                                    <String fx:value="Seats Occupied =" />
+                                    <String fx:value="Capacity &gt;" />
+                                    <String fx:value="Seats Remaining &gt;" />
+                                    <String fx:value="Seats Occupied &gt;" />
+                                    <String fx:value="Capacity &lt;" />
+                                    <String fx:value="Seats Remaining &lt;" />
+                                    <String fx:value="Seats Occupied &lt;" />
+
+                                </FXCollections>
+                            </items>
+                        </ComboBox>
+                        <ComboBox fx:id="intro2_combo" onAction="#intro2_setTable" prefWidth="150.0" promptText="Choose" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                            <items>
+                                <FXCollections fx:factory="observableArrayList">
+                                    <String fx:value="Instructor" />
+                                    <String fx:value="Subject" />
+                                    <String fx:value="Course Number" /> <!--Crse-->
+                                    <String fx:value="Course Name" /> <!--title-->
+                                    <String fx:value="Building" /> <!--Crse-->
+                                    <String fx:value="Room Number" />
+                                    <String fx:value="Capacity =" />
+                                    <String fx:value="Seats Remaining =" />
+                                    <String fx:value="Seats Occupied =" />
+                                    <String fx:value="Capacity &gt;" />
+                                    <String fx:value="Seats Remaining &gt;" />
+                                    <String fx:value="Seats Occupied &gt;" />
+                                    <String fx:value="Capacity &lt;" />
+                                    <String fx:value="Seats Remaining &lt;" />
+                                    <String fx:value="Seats Occupied &lt;" />
+                                </FXCollections>
+                            </items>
+                        </ComboBox>
+                        <Button fx:id="qsearch_butt" mnemonicParsing="false" onAction="#qsearch_buttAction" text="Quick Search" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                        <VBox fx:id="intro1_vbox" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                            <children>
+                                <TableView prefHeight="200.0" prefWidth="200.0" />
+                            </children></VBox>
+                        <VBox fx:id="intro2_vbox" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                            <children>
+                                <TableView prefHeight="200.0" prefWidth="200.0" />
+                            </children></VBox>
+                        <Label prefHeight="24.0" prefWidth="56.0" text="Start Here:" GridPane.columnIndex="1" />
+                        <Button fx:id="time_search" mnemonicParsing="false" onAction="#time_search" text="Time Based Search" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                    </children>
+                </GridPane>
+            </center>
+            <bottom>
+                <TextArea fx:id="bottom_textfield" editable="false" prefHeight="18.0" prefWidth="1000.0" promptText="TAMU Course Search" BorderPane.alignment="CENTER">
+                    <font>
+                        <Font size="10.0" />
+                    </font>
+                </TextArea>
+            </bottom>
+        </BorderPane>
+    </children>
+</GridPane>

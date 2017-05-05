@@ -1,0 +1,288 @@
+/*Color Pallete*/
+/*
+Deep Maroon: #420300
+Light Maroon: #5c0302
+Off White: #DBD4C6
+Creamish Yellow: #F0C461
+Dark Grey: #252525
+
+*/
+.root {
+    -fx-font-size: 12pt;
+    -fx-font-family: "Arial";
+    /*-fx-base: rgba(34, 34, 34, 0.79);*/
+    -fx-base: transparent;
+    /*-fx-background: rgb(229, 223, 207);*/
+    -fx-background-color: #DBD4C6;
+}
+
+/* The increment and decrement button CSS class of scrollbar */
+.root .scroll-bar .increment-button ,.scroll-bar .decrement-button {
+    -fx-background-color:transparent;
+    -fx-background-radius: 2em
+}
+
+/* The increment and decrement button CSS class of scrollbar */
+.root .scroll-bar:horizontal .increment-button ,
+.root .scroll-bar:horizontal .decrement-button {
+    -fx-background-color:transparent;
+    -fx-background-radius: 0em;
+    -fx-padding:0 0 10 0;
+
+}
+
+.root .scroll-bar:vertical .increment-button ,
+.root .scroll-bar:vertical .decrement-button {
+    -fx-background-color:transparent;
+    -fx-background-radius: 0em;
+    -fx-padding:0 10 0 0;
+}
+.root .scroll-bar .increment-arrow,
+.root .scroll-bar .decrement-arrow {
+    -fx-shape: " ";
+    -fx-padding:0;
+}
+
+.root .scroll-bar:horizontal .track ,
+.root .scroll-bar:vertical .track{
+    -fx-background-color: transparent;
+    -fx-border-color:transparent;
+    -fx-background-radius: 2em;
+    -fx-border-radius:2em;
+}
+
+.root .scroll-bar .thumb{
+    -fx-background-insets: 2, 0, 0;
+    -fx-background-radius: 2em;
+}
+
+
+.text-field {
+    -fx-background-color: white;
+    -fx-prompt-text-fill: darkgray;
+    /*-fx-text-fill: rgb(15, 15, 15);*/
+    -fx-font-size: 10pt;
+}
+
+.text-area {
+    -fx-background-color: transparent;
+}
+
+.text-area .content{
+    -fx-background-color: white;
+}
+/*.text-area .scroll-bar .thumb{*/
+    /*-fx-background-color: #750001;*/
+    /*-fx-background-size: 2px,auto;*/
+/*}*/
+
+/*.text-area .scroll-bar {*/
+    /*-fx-background-color: transparent;*/
+    /*-fx-background-size: 2px,auto;*/
+/*}*/
+
+.check-box *.box{
+    -fx-background-color: white;
+}
+
+.check-box .mark {
+    -fx-background-color: transparent;
+    -fx-background-insets: 1 0 -1 0, 0;
+    -fx-padding: 0.333333em; /* 4 -- this is half the size of the mark */
+    /*-fx-shape: "M0,4H2L3,6L6,0H8L4,8H2Z";*/
+}
+
+.check-box:selected .mark {
+    -fx-background-color: black;
+    -fx-tick-mark-visible: true;
+}
+
+.menu {
+    -fx-font-size: 10pt;
+    -fx-spacing: 1px;
+    -fx-background-color: #252525;
+    -fx-border-color: #252525;
+}
+.menu-bar {
+    -fx-color-label-visible: #DBD4C6;
+    -fx-prompt-text-fill: white;
+}
+.menu-bar .label{
+    -fx-text-fill: whitesmoke;
+}
+.menu-item .label{
+    -fx-text-fill: #252525;
+}
+#titleText{
+    -fx-text-fill: #DBD4C6;
+}
+.button {
+    -fx-background-radius: 0;
+    -fx-background-color: rgba(34, 34, 34, 0.79);
+    -fx-font-size: 10pt;
+    -fx-text-fill: white;
+}
+.default-button{
+    -fx-background-radius: 0;
+    -fx-background-color: #252525;
+    -fx-font-size: 10pt;
+    -fx-text-fill: white;
+}
+.toggle-button{
+    -fx-background-radius: 0;
+    -fx-background-color: #252525;
+}
+.toggle-button:selected{
+    -fx-background-radius: 0;
+    -fx-background-color: #252525;
+}
+#quick-box {
+    -fx-background-color: white;
+    -fx-background-size: 70, 60;
+}
+.list-view {
+    -fx-padding: 5px;
+    -fx-background-color: transparent;
+    -fx-font-size: 10pt;
+}
+.list-view .scroll-bar{
+    -fx-background-color: transparent;
+    -fx-background-size: 2px,auto;
+}
+.list-view .scroll-bar .thumb{
+    -fx-background-color: #750001;
+    -fx-background-size: 2px,auto;
+}
+.list-cell {
+    -fx-background-color: white;
+}
+.list-cell:odd {
+    -fx-background-color: gainsboro;
+}
+.list-cell:filled:selected {
+    -fx-background-color: #d38282;
+    -fx-text-fill: white;
+}
+.table-view {
+    /*-fx-padding: 0,20,20,20;*/
+    -fx-background-color: transparent;
+    -fx-font-size: 10pt;
+    -fx-highlight-fill: #d38282;
+    -fx-highlight-text-fill: white;
+
+}
+.table-row-cell:selected{
+    -fx-background-color:  #d38282;
+    -fx-highlight-fill: #d38282;
+}
+
+.table-view .scroll-bar{
+    -fx-background-color: transparent;
+    -fx-background-size: 2px,auto;
+}
+.table-view .scroll-bar .thumb{
+    -fx-background-color: #750001;
+    -fx-background-size: 2px,auto;
+}
+.table-view .column-header-background{
+    /*-fx-background-color: linear-gradient(#750001 0%, #4d0001 100%);*/
+    -fx-background-color:#750001;
+}
+.table-view .column-header-background .label{
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+}
+.table-view .column-header{
+    -fx-background-color: transparent;
+}
+.table-view .filler{
+    -fx-background-color: transparent;
+    -fx-highlight-fill: #d38282;
+    -fx-highlight-text-fill: white;
+}
+.table-row-cell:even{
+    -fx-background-color: white;
+}
+.table-row-cell:odd {
+    -fx-background-color: gainsboro;
+}
+
+.choice-box{
+    -fx-font-size: 10pt;
+    -fx-pref-width: 25px;
+    -fx-background: white;
+    -fx-background-radius: 0px;
+    -fx-fill: white;
+}
+
+.combo-box{
+    -fx-font-size: 10pt;
+    -fx-pref-width: 100px;
+}
+
+.combo-box .list-cell
+{
+    -fx-background: white;
+    -fx-background-color: transparent;
+    -fx-text-fill: black;
+    -fx-padding: 3 0 2 7;
+    -fx-cell-size: 1.66667em;
+}
+
+.combo-box-popup .list-view
+{
+    -fx-background-color: white, white;
+    -fx-background-insets: 0, 1;
+    /*-fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 8, 0.0 , 0 , 0 );*/
+}
+
+.combo-box-popup .list-view .list-cell
+{
+    -fx-padding: 4 0 4 5;
+
+    /* No alternate highlighting */
+    -fx-background-color: white;
+}
+
+.combo-box-popup .list-view .list-cell:filled:selected, .combo-box-popup .list-view .list-cell:filled:selected:hover
+{
+    -fx-background: white;
+    -fx-background-color: white;
+    -fx-text-fill: -fx-selection-bar-text;
+}
+
+.combo-box-popup .list-view .list-cell:filled:hover
+{
+    -fx-background-color: #d38282;
+    -fx-text-fill: -fx-text-inner-color;
+}
+
+.combo-box-base
+{
+    /*-fx-skin: "com.sun.javafx.scene.control.skin.ComboBoxBaseSkin";*/
+    -fx-background-color: white, white, white, white;
+    -fx-background-radius: 0;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+    -fx-fit-to-width: true;
+}
+
+.combo-box-base:hover
+{
+    -fx-color: transparent;
+}
+
+.combo-box-base:showing
+{
+    -fx-color: transparent;
+}
+
+.combo-box-base:focused {
+    -fx-background-color: white;
+    -fx-background-radius: 0;
+    -fx-background-insets: 0;
+}
+
+.combo-box-base:disabled {
+    -fx-opacity: .4;
+}
